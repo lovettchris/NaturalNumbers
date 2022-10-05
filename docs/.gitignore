@@ -1,0 +1,3 @@
+*.lean.md
+.ninja_log
+__pycache__/
