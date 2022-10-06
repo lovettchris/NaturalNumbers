@@ -24,6 +24,12 @@ build MultiplicationWorld/Level5.lean.md: alectryon $
     MultiplicationWorld/Level5.lean
 build MultiplicationWorld/Level6.lean.md: alectryon $
     MultiplicationWorld/Level6.lean
+build MultiplicationWorld/Level7.lean.md: alectryon $
+    MultiplicationWorld/Level7.lean
+build MultiplicationWorld/Level8.lean.md: alectryon $
+    MultiplicationWorld/Level8.lean
+build MultiplicationWorld/Level9.lean.md: alectryon $
+    MultiplicationWorld/Level9.lean
 build MyNat/Addition.lean.md: alectryon MyNat/Addition.lean
 build MyNat/Definition.lean.md: alectryon MyNat/Definition.lean
 build MyNat/Multiplication.lean.md: alectryon MyNat/Multiplication.lean
@@ -39,7 +45,9 @@ build docs/index.html: book ./AdditionWorld.lean.md $
     MultiplicationWorld/Level1.lean.md MultiplicationWorld/Level2.lean.md $
     MultiplicationWorld/Level3.lean.md MultiplicationWorld/Level4.lean.md $
     MultiplicationWorld/Level5.lean.md MultiplicationWorld/Level6.lean.md $
-    MyNat/Addition.lean.md MyNat/Definition.lean.md $
-    MyNat/Multiplication.lean.md TutorialWorld/Level1.lean.md $
-    TutorialWorld/Level2.lean.md TutorialWorld/Level3.lean.md $
-    TutorialWorld/Level4.lean.md SUMMARY.md typos.md book.toml
+    MultiplicationWorld/Level7.lean.md MultiplicationWorld/Level8.lean.md $
+    MultiplicationWorld/Level9.lean.md MyNat/Addition.lean.md $
+    MyNat/Definition.lean.md MyNat/Multiplication.lean.md $
+    TutorialWorld/Level1.lean.md TutorialWorld/Level2.lean.md $
+    TutorialWorld/Level3.lean.md TutorialWorld/Level4.lean.md SUMMARY.md $
+    typos.md book.toml

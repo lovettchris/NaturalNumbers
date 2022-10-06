@@ -2,7 +2,6 @@ import MyNat.Addition
 import MyNat.Multiplication
 import MultiplicationWorld.Level1 -- zero_mul
 import MultiplicationWorld.Level4 -- mul_add
-import Mathlib.Algebra.Group.defs
 namespace MyNat
 open MyNat
 
