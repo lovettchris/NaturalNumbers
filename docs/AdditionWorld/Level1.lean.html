@@ -154,33 +154,6 @@
 </span><span class="alectryon-token"><span class="kn">namespace</span></span><span class="alectryon-token"> MyNat
 </span><span class="alectryon-token"><span class="kn">open</span></span><span class="alectryon-token"> MyNat</span></span></pre>
 <h1 id="addition-world"><a class="header" href="#addition-world">Addition World.</a></h1>
-<p>Welcome to Addition World. If you've done all four levels in <a href="../TutorialWorld/Level1.lean.html">Tutorial World</a>
-and know about <code>rw</code> and <code>rfl</code>, then you're in the right place. Here's
-a reminder of the things you're now equipped with which you'll need in this world.</p>
-<h2 id="data"><a class="header" href="#data">Data:</a></h2>
-<ul>
-<li>a type called <code>MyNat</code></li>
-<li>a term <code>(0 : MyNat)</code>, interpreted as the number zero.</li>
-<li>a function <code>succ : MyNat → MyNat</code>, with <code>succ n</code> interpreted as &quot;the number after <code>n</code>&quot;.</li>
-<li>Usual numerical notation 0,1,2 etc (although 2 onwards will be of no use to us until much later ;-) ).</li>
-<li>Addition (with notation <code>a + b</code>).</li>
-</ul>
-<h2 id="theorems"><a class="header" href="#theorems">Theorems:</a></h2>
-<ul>
-<li><code>add_zero (a : MyNat) : a + 0 = a</code>. Use with <code>rw [add_zero]</code>.</li>
-<li><code>add_succ (a b : MyNat) : a + succ(b) = succ(a + b)</code>. Use with <code>rw [add_succ]</code>.</li>
-<li>The principle of mathematical induction. Use with <code>induction</code> (see below)</li>
-</ul>
-<h2 id="tactics"><a class="header" href="#tactics">Tactics:</a></h2>
-<ul>
-<li><code>rfl</code> :  proves goals of the form <code>X = X</code></li>
-<li><code>rw [h]</code> : if h is a proof of <code>A = B</code>, changes all A's in the goal to B's.</li>
-<li><code>induction n with ...</code> : we're going to learn this right now.</li>
-</ul>
-<h2 id="important-thing"><a class="header" href="#important-thing">Important thing</a></h2>
-<p>This is a <em>really</em> good time to check you can get &quot;mouse hover help on anything in the Lean program.
-If you hover over 'rfl' you get information on that tactic.  You can also press F12 to jump
-right into the definition of all the helpers functions you use here.</p>
 <h2 id="level-1-the-induction-tactic"><a class="header" href="#level-1-the-induction-tactic">Level 1: the <code>induction</code> tactic.</a></h2>
 <p>OK so let's see induction in action. We're going to prove</p>
 <p><code>zero_add (n : MyNat) : 0 + n = n</code>.</p>

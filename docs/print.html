@@ -417,33 +417,6 @@ right into the definition of all the helpers functions we use here.</p>
 </span><span class="alectryon-token"><span class="kn">namespace</span></span><span class="alectryon-token"> MyNat
 </span><span class="alectryon-token"><span class="kn">open</span></span><span class="alectryon-token"> MyNat</span></span></pre>
 <h1 id="addition-world-1"><a class="header" href="#addition-world-1">Addition World.</a></h1>
-<p>Welcome to Addition World. If you've done all four levels in <a href="AdditionWorld/../TutorialWorld/Level1.lean.html">Tutorial World</a>
-and know about <code>rw</code> and <code>rfl</code>, then you're in the right place. Here's
-a reminder of the things you're now equipped with which you'll need in this world.</p>
-<h2 id="data-1"><a class="header" href="#data-1">Data:</a></h2>
-<ul>
-<li>a type called <code>MyNat</code></li>
-<li>a term <code>(0 : MyNat)</code>, interpreted as the number zero.</li>
-<li>a function <code>succ : MyNat → MyNat</code>, with <code>succ n</code> interpreted as &quot;the number after <code>n</code>&quot;.</li>
-<li>Usual numerical notation 0,1,2 etc (although 2 onwards will be of no use to us until much later ;-) ).</li>
-<li>Addition (with notation <code>a + b</code>).</li>
-</ul>
-<h2 id="theorems-1"><a class="header" href="#theorems-1">Theorems:</a></h2>
-<ul>
-<li><code>add_zero (a : MyNat) : a + 0 = a</code>. Use with <code>rw [add_zero]</code>.</li>
-<li><code>add_succ (a b : MyNat) : a + succ(b) = succ(a + b)</code>. Use with <code>rw [add_succ]</code>.</li>
-<li>The principle of mathematical induction. Use with <code>induction</code> (see below)</li>
-</ul>
-<h2 id="tactics-1"><a class="header" href="#tactics-1">Tactics:</a></h2>
-<ul>
-<li><code>rfl</code> :  proves goals of the form <code>X = X</code></li>
-<li><code>rw [h]</code> : if h is a proof of <code>A = B</code>, changes all A's in the goal to B's.</li>
-<li><code>induction n with ...</code> : we're going to learn this right now.</li>
-</ul>
-<h2 id="important-thing-1"><a class="header" href="#important-thing-1">Important thing</a></h2>
-<p>This is a <em>really</em> good time to check you can get &quot;mouse hover help on anything in the Lean program.
-If you hover over 'rfl' you get information on that tactic.  You can also press F12 to jump
-right into the definition of all the helpers functions you use here.</p>
 <h2 id="level-1-the-induction-tactic"><a class="header" href="#level-1-the-induction-tactic">Level 1: the <code>induction</code> tactic.</a></h2>
 <p>OK so let's see induction in action. We're going to prove</p>
 <p><code>zero_add (n : MyNat) : 0 + n = n</code>.</p>
@@ -607,9 +580,7 @@ what the variables are&quot;.</p>
 </span><span class="alectryon-token"><span class="kn">open</span></span><span class="alectryon-token"> MyNat</span></span></pre>
 <h1 id="addition-world-4"><a class="header" href="#addition-world-4">Addition World</a></h1>
 <h2 id="level-4-add_comm"><a class="header" href="#level-4-add_comm">Level 4: <code>add_comm</code></a></h2>
-<p>[boss battle music]</p>
-<p>Look in Theorem statements -&gt; Addition world to see the proofs you have.
-These should be enough.</p>
+<p>In this level, you'll prove that addition is commutative.</p>
 <h2 id="lemma-2"><a class="header" href="#lemma-2">Lemma</a></h2>
 <p>On the set of natural numbers, addition is commutative.
 In other words, for all natural numbers <code>a</code> and <code>b</code>, we have <code>a + b = b + a.</code></p>
@@ -661,6 +632,7 @@ in the inductive step, then you probably didn't need proof by induction.</p>
 <span class="kn">import</span> AdditionWorld.Level2 <span class="c1">-- add_assoc</span>
 <span class="kn">import</span> AdditionWorld.Level4 <span class="c1">-- add_comm</span>
 <span class="kn">import</span> AdditionWorld.Level5 <span class="c1">-- succ_eq_add_one</span>
+<span class="kn">import</span> Mathlib.Tactic.Ring
 </span><span class="alectryon-token"><span class="kn">namespace</span></span><span class="alectryon-token"> MyNat
 </span><span class="alectryon-token"><span class="kn">open</span></span><span class="alectryon-token"> MyNat</span></span></pre>
 <h1 id="addition-world-6"><a class="header" href="#addition-world-6">Addition World</a></h1>
@@ -696,14 +668,30 @@ to some players, are mentioned below the lemma.</p>
   </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk1"><span class="alectryon-token"><span class="k">rw</span></span><span class="alectryon-token"> [</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> b <span class="bp">+</span> c <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk2" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk2"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_assoc</var><b>: </b><span>∀ (a b c : MyNat), a + b + c = a + (b + c)</span></span></div></blockquote></div></small></div>add_assoc</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> (b <span class="bp">+</span> c) <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk3" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk3"><span class="alectryon-token">]</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> (b <span class="bp">+</span> c) <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
   </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk4"><span class="alectryon-token"><span class="k">rw</span></span><span class="alectryon-token"> [</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> (b <span class="bp">+</span> c) <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk5" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk5"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_comm</var><b>: </b><span>∀ (a b : MyNat), a + b = b + a</span></span></div></blockquote></div></small></div>add_comm</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>MyNat</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>c</var><b>: </b><span>MyNat</span></span></div></blockquote></div></small></div><span class="nv">c</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> (c <span class="bp">+</span> b) <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk6" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk6"><span class="alectryon-token">]</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> (c <span class="bp">+</span> b) <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
   </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk7" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk7"><span class="alectryon-token"><span class="k">rw</span></span><span class="alectryon-token"> [</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> (c <span class="bp">+</span> b) <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk8" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk8"><span class="alectryon-token"><span class="bp">←</span></span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_assoc</var><b>: </b><span>∀ (a b c : MyNat), a + b + c = a + (b + c)</span></span></div></blockquote></div></small></div>add_assoc</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> c <span class="bp">+</span> b <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk9" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk9"><span class="alectryon-token">]</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span></pre>
-<p>If you have got this far, then you have become very good at
-manipulating equalities in Lean. You can also now collect
-four collectibles (or <code>instance</code>s, as Lean calls them)</p>
-<pre><code>MyNat.add_semigroup -- (after level 2)
-MyNat.add_monoid -- (after level 2)
-MyNat.add_comm_semigroup MyNat (after level 4)
-MyNat.add_comm_monoid -- (after level 4)
-</code></pre>
+<p>If you have got this far, then you have become very good at manipulating equalities in Lean. You can
+also now connect four handy type class <code>instances</code> to your <code>MyNat</code> type as follows:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>instance</var><b>: </b><span>AddSemigroup MyNat</span></span></div></blockquote></div></small></div><span class="kd">instance</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>AddSemigroup</var><b>: </b><span>Type → Type</span></span></div></blockquote></div></small></div>AddSemigroup</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>MyNat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>MyNat</span><span class="alectryon-token"> </span><span class="alectryon-token"><span class="k">where</span></span><span class="alectryon-token">
+  add_assoc := </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_assoc</var><b>: </b><span>∀ (a b c : MyNat), a + b + c = a + (b + c)</span></span></div></blockquote></div></small></div>add_assoc</span><span class="alectryon-token">
+
+</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>instance</var><b>: </b><span>AddCommSemigroup MyNat</span></span></div></blockquote></div></small></div><span class="kd">instance</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>AddCommSemigroup</var><b>: </b><span>Type → Type</span></span></div></blockquote></div></small></div>AddCommSemigroup</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>MyNat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>MyNat</span><span class="alectryon-token"> </span><span class="alectryon-token"><span class="k">where</span></span><span class="alectryon-token">
+  add_comm := </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_comm</var><b>: </b><span>∀ (a b : MyNat), a + b = b + a</span></span></div></blockquote></div></small></div>add_comm</span><span class="alectryon-token">
+
+<span class="c1">-- instance : AddMonoid MyNat where</span>
+<span class="c1">--   nsmul :=  λ x y =&gt; (myNatFromNat x) * y</span>
+<span class="c1">--   nsmul_zero&#39; := MyNat.zero_mul</span>
+<span class="c1">--   nsmul_succ&#39; n x := by</span>
+<span class="c1">--     show ofNat (MyNat.succ n) * x = x + MyNat n * x</span>
+<span class="c1">--     rw [MyNat.ofNat_succ, MyNat.add_mul, MyNat.add_comm, MyNat.one_mul]</span>
+
+<span class="c1">-- instance : AddCommMonoid MyNat where</span>
+<span class="c1">--   zero_add := zero_add</span>
+<span class="c1">--   add_zero := add_zero</span>
+<span class="c1">--   add_comm := add_comm</span>
+<span class="c1">--   nsmul_zero&#39; := ...</span>
+<span class="c1">--   nsmul_succ&#39; := ...</span>
+
+<span class="c1">-- BUGBUG: really? These last two require theorems about multiplication?</span>
+<span class="c1">-- like add_mul and zero_mul, which is dependent on mul_comm...?</span></span></span></pre>
 <p>In Multiplication World you will be able to collect such
 advanced collectibles as <code>MyNat.comm_semiring</code> and
 <code>MyNat.distrib</code>, and then move on to power world and
