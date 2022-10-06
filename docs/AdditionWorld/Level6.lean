@@ -92,7 +92,7 @@ The `simp` AI (it's just an advanced tactic really), and can nail some really
 tedious-for-a-human-to-solve goals. For example, check out this one-line proof.
 First you need to teach `simp` about the building blocks you have created so far:
 -/
-attribute [simp] zero_add add_assoc add_comm succ_add add_succ succ_eq_add_one one_eq_succ_zero
+attribute [simp] zero_add add_assoc add_comm succ_add add_succ succ_eq_add_one one_eq_succ_zero add_right_comm
 
 -- example (a b c d e : MyNat) :
 --   (((a+b)+c)+d)+e=(c+((b+e)+a))+d := by
