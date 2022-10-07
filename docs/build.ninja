@@ -3,6 +3,8 @@ rule alectryon
       --backend webpage -o $out
 rule book
   command = mdbook build
+rule lake
+  command = lake build $in
 build ./AdditionWorld.lean.md: alectryon ./AdditionWorld.lean
 build ./FunctionWorld.lean.md: alectryon ./FunctionWorld.lean
 build ./MultiplicationWorld.lean.md: alectryon ./MultiplicationWorld.lean
@@ -16,6 +18,18 @@ build AdditionWorld/Level3.lean.md: alectryon AdditionWorld/Level3.lean
 build AdditionWorld/Level4.lean.md: alectryon AdditionWorld/Level4.lean
 build AdditionWorld/Level5.lean.md: alectryon AdditionWorld/Level5.lean
 build AdditionWorld/Level6.lean.md: alectryon AdditionWorld/Level6.lean
+build build/lib/AdditionWorld/Level1.olean $
+    build/lib/AdditionWorld/Level1.ilean $
+    build/lib/AdditionWorld/Level2.olean $
+    build/lib/AdditionWorld/Level2.ilean $
+    build/lib/AdditionWorld/Level3.olean $
+    build/lib/AdditionWorld/Level3.ilean $
+    build/lib/AdditionWorld/Level4.olean $
+    build/lib/AdditionWorld/Level4.ilean $
+    build/lib/AdditionWorld/Level5.olean $
+    build/lib/AdditionWorld/Level5.ilean $
+    build/lib/AdditionWorld/Level6.olean $
+    build/lib/AdditionWorld/Level6.ilean : lake AdditionWorld || TutorialWorld
 build FunctionWorld/Level1.lean.md: alectryon FunctionWorld/Level1.lean
 build FunctionWorld/Level2.lean.md: alectryon FunctionWorld/Level2.lean
 build FunctionWorld/Level3.lean.md: alectryon FunctionWorld/Level3.lean
@@ -25,6 +39,24 @@ build FunctionWorld/Level6.lean.md: alectryon FunctionWorld/Level6.lean
 build FunctionWorld/Level7.lean.md: alectryon FunctionWorld/Level7.lean
 build FunctionWorld/Level8.lean.md: alectryon FunctionWorld/Level8.lean
 build FunctionWorld/Level9.lean.md: alectryon FunctionWorld/Level9.lean
+build build/lib/FunctionWorld/Level1.olean $
+    build/lib/FunctionWorld/Level1.ilean $
+    build/lib/FunctionWorld/Level2.olean $
+    build/lib/FunctionWorld/Level2.ilean $
+    build/lib/FunctionWorld/Level3.olean $
+    build/lib/FunctionWorld/Level3.ilean $
+    build/lib/FunctionWorld/Level4.olean $
+    build/lib/FunctionWorld/Level4.ilean $
+    build/lib/FunctionWorld/Level5.olean $
+    build/lib/FunctionWorld/Level5.ilean $
+    build/lib/FunctionWorld/Level6.olean $
+    build/lib/FunctionWorld/Level6.ilean $
+    build/lib/FunctionWorld/Level7.olean $
+    build/lib/FunctionWorld/Level7.ilean $
+    build/lib/FunctionWorld/Level8.olean $
+    build/lib/FunctionWorld/Level8.ilean $
+    build/lib/FunctionWorld/Level9.olean $
+    build/lib/FunctionWorld/Level9.ilean: lake FunctionWorld  || PowerWorld
 build MultiplicationWorld/Level1.lean.md: alectryon $
     MultiplicationWorld/Level1.lean
 build MultiplicationWorld/Level2.lean.md: alectryon $
@@ -43,10 +75,33 @@ build MultiplicationWorld/Level8.lean.md: alectryon $
     MultiplicationWorld/Level8.lean
 build MultiplicationWorld/Level9.lean.md: alectryon $
     MultiplicationWorld/Level9.lean
+build build/lib/MultiplicationWorld/Level1.olean $
+    build/lib/MultiplicationWorld/Level1.ilean $
+    build/lib/MultiplicationWorld/Level2.olean $
+    build/lib/MultiplicationWorld/Level2.ilean $
+    build/lib/MultiplicationWorld/Level3.olean $
+    build/lib/MultiplicationWorld/Level3.ilean $
+    build/lib/MultiplicationWorld/Level4.olean $
+    build/lib/MultiplicationWorld/Level4.ilean $
+    build/lib/MultiplicationWorld/Level5.olean $
+    build/lib/MultiplicationWorld/Level5.ilean $
+    build/lib/MultiplicationWorld/Level6.olean $
+    build/lib/MultiplicationWorld/Level6.ilean $
+    build/lib/MultiplicationWorld/Level7.olean $
+    build/lib/MultiplicationWorld/Level7.ilean $
+    build/lib/MultiplicationWorld/Level8.olean $
+    build/lib/MultiplicationWorld/Level8.ilean $
+    build/lib/MultiplicationWorld/Level9.olean $
+    build/lib/MultiplicationWorld/Level9.ilean: lake MultiplicationWorld  || AdditionWorld
 build MyNat/Addition.lean.md: alectryon MyNat/Addition.lean
 build MyNat/Definition.lean.md: alectryon MyNat/Definition.lean
 build MyNat/Multiplication.lean.md: alectryon MyNat/Multiplication.lean
 build MyNat/Power.lean.md: alectryon MyNat/Power.lean
+build build/lib/MyNat/Addition.olean build/lib/MyNat/Addition.ilean $
+    build/lib/MyNat/Definition.olean build/lib/MyNat/Definition.ilean $
+    build/lib/MyNat/Multiplication.olean $
+    build/lib/MyNat/Multiplication.ilean build/lib/MyNat/Power.olean $
+    build/lib/MyNat/Power.ilean: lake MyNat
 build PowerWorld/Level1.lean.md: alectryon PowerWorld/Level1.lean
 build PowerWorld/Level2.lean.md: alectryon PowerWorld/Level2.lean
 build PowerWorld/Level3.lean.md: alectryon PowerWorld/Level3.lean
@@ -55,6 +110,15 @@ build PowerWorld/Level5.lean.md: alectryon PowerWorld/Level5.lean
 build PowerWorld/Level6.lean.md: alectryon PowerWorld/Level6.lean
 build PowerWorld/Level7.lean.md: alectryon PowerWorld/Level7.lean
 build PowerWorld/Level8.lean.md: alectryon PowerWorld/Level8.lean
+build build/lib/PowerWorld/Level1.olean build/lib/PowerWorld/Level1.ilean $
+    build/lib/PowerWorld/Level2.olean build/lib/PowerWorld/Level2.ilean $
+    build/lib/PowerWorld/Level3.olean build/lib/PowerWorld/Level3.ilean $
+    build/lib/PowerWorld/Level4.olean build/lib/PowerWorld/Level4.ilean $
+    build/lib/PowerWorld/Level5.olean build/lib/PowerWorld/Level5.ilean $
+    build/lib/PowerWorld/Level6.olean build/lib/PowerWorld/Level6.ilean $
+    build/lib/PowerWorld/Level7.olean build/lib/PowerWorld/Level7.ilean $
+    build/lib/PowerWorld/Level8.olean build/lib/PowerWorld/Level8.ilean $
+    : lake PowerWorld || MultiplicationWorld
 build PropositionWorld/Level1.lean.md: alectryon PropositionWorld/Level1.lean
 build PropositionWorld/Level2.lean.md: alectryon PropositionWorld/Level2.lean
 build PropositionWorld/Level3.lean.md: alectryon PropositionWorld/Level3.lean
@@ -64,10 +128,36 @@ build PropositionWorld/Level6.lean.md: alectryon PropositionWorld/Level6.lean
 build PropositionWorld/Level7.lean.md: alectryon PropositionWorld/Level7.lean
 build PropositionWorld/Level8.lean.md: alectryon PropositionWorld/Level8.lean
 build PropositionWorld/Level9.lean.md: alectryon PropositionWorld/Level9.lean
+build build/lib/PropositionWorld/Level1.olean $
+    build/lib/PropositionWorld/Level1.ilean $
+    build/lib/PropositionWorld/Level2.olean $
+    build/lib/PropositionWorld/Level2.ilean $
+    build/lib/PropositionWorld/Level3.olean $
+    build/lib/PropositionWorld/Level3.ilean $
+    build/lib/PropositionWorld/Level4.olean $
+    build/lib/PropositionWorld/Level4.ilean $
+    build/lib/PropositionWorld/Level5.olean $
+    build/lib/PropositionWorld/Level5.ilean $
+    build/lib/PropositionWorld/Level6.olean $
+    build/lib/PropositionWorld/Level6.ilean $
+    build/lib/PropositionWorld/Level7.olean $
+    build/lib/PropositionWorld/Level7.ilean $
+    build/lib/PropositionWorld/Level8.olean $
+    build/lib/PropositionWorld/Level8.ilean $
+    build/lib/PropositionWorld/Level9.olean $
+    build/lib/PropositionWorld/Level9.ilean: lake PropositionWorld  || FunctionWorld
 build TutorialWorld/Level1.lean.md: alectryon TutorialWorld/Level1.lean
 build TutorialWorld/Level2.lean.md: alectryon TutorialWorld/Level2.lean
 build TutorialWorld/Level3.lean.md: alectryon TutorialWorld/Level3.lean
 build TutorialWorld/Level4.lean.md: alectryon TutorialWorld/Level4.lean
+build build/lib/TutorialWorld/Level1.olean $
+    build/lib/TutorialWorld/Level1.ilean $
+    build/lib/TutorialWorld/Level2.olean $
+    build/lib/TutorialWorld/Level2.ilean $
+    build/lib/TutorialWorld/Level3.olean $
+    build/lib/TutorialWorld/Level3.ilean $
+    build/lib/TutorialWorld/Level4.olean $
+    build/lib/TutorialWorld/Level4.ilean: lake TutorialWorld  || MyNat
 build docs/index.html: book ./AdditionWorld.lean.md ./FunctionWorld.lean.md $
     ./MultiplicationWorld.lean.md ./MyNat.lean.md ./PowerWorld.lean.md $
     ./PropositionWorld.lean.md ./TutorialWorld.lean.md $
@@ -95,4 +185,4 @@ build docs/index.html: book ./AdditionWorld.lean.md ./FunctionWorld.lean.md $
     PropositionWorld/Level7.lean.md PropositionWorld/Level8.lean.md $
     PropositionWorld/Level9.lean.md TutorialWorld/Level1.lean.md $
     TutorialWorld/Level2.lean.md TutorialWorld/Level3.lean.md $
-    TutorialWorld/Level4.lean.md SUMMARY.md typos.md book.toml
+    TutorialWorld/Level4.lean.md SUMMARY.md typos.md book.toml || PropositionWorld

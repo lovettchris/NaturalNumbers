@@ -35,17 +35,17 @@
         <link rel="stylesheet" href="../assets/custom.css">
 
         <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script>
+        <script type="text/javascript">
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
+        <script type="text/javascript">
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -61,7 +61,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
+        <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -73,7 +73,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
+        <script type="text/javascript">
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -140,7 +140,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
+                <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -154,7 +154,6 @@
 <span class="kn">import</span> AdditionWorld.Level2 <span class="c1">-- add_assoc</span>
 <span class="kn">import</span> AdditionWorld.Level4 <span class="c1">-- add_comm</span>
 <span class="kn">import</span> AdditionWorld.Level5 <span class="c1">-- succ_eq_add_one</span>
-<span class="kn">import</span> Mathlib.Tactic.Ring
 </span><span class="alectryon-token"><span class="kn">namespace</span></span><span class="alectryon-token"> MyNat
 </span><span class="alectryon-token"><span class="kn">open</span></span><span class="alectryon-token"> MyNat</span></span></pre>
 <h1 id="addition-world"><a class="header" href="#addition-world">Addition World</a></h1>
@@ -194,11 +193,11 @@ to some players, are mentioned below the lemma.</p>
   </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk7" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk7"><span class="alectryon-token"><span class="k">rw</span></span><span class="alectryon-token"> [</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> (c <span class="bp">+</span> b) <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk8" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk8"><span class="alectryon-token"><span class="bp">←</span></span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_assoc</var><b>: </b><span>∀ (a b c : MyNat), a + b + c = a + (b + c)</span></span></div></blockquote></div></small></div>add_assoc</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b, c</var><span class="hyp-type"><b>: </b><span>MyNat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">+</span> c <span class="bp">+</span> b <span class="bp">=</span> a <span class="bp">+</span> c <span class="bp">+</span> b</div></blockquote></div></div></small></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Level6-lean-chk9" style="display: none" type="checkbox"><label class="alectryon-input" for="Level6-lean-chk9"><span class="alectryon-token">]</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span></pre>
 <p>If you have got this far, then you have become very good at manipulating equalities in Lean. You can
 also now connect four handy type class <code>instances</code> to your <code>MyNat</code> type as follows:</p>
-<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>instance</var><b>: </b><span>AddSemigroup MyNat</span></span></div></blockquote></div></small></div><span class="kd">instance</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>AddSemigroup</var><b>: </b><span>Type → Type</span></span></div></blockquote></div></small></div>AddSemigroup</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>MyNat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>MyNat</span><span class="alectryon-token"> </span><span class="alectryon-token"><span class="k">where</span></span><span class="alectryon-token">
-  add_assoc := </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_assoc</var><b>: </b><span>∀ (a b c : MyNat), a + b + c = a + (b + c)</span></span></div></blockquote></div></small></div>add_assoc</span><span class="alectryon-token">
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="c1">-- instance : AddSemigroup MyNat where</span>
+<span class="c1">--   add_assoc := add_assoc</span>
 
-</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>instance</var><b>: </b><span>AddCommSemigroup MyNat</span></span></div></blockquote></div></small></div><span class="kd">instance</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>AddCommSemigroup</var><b>: </b><span>Type → Type</span></span></div></blockquote></div></small></div>AddCommSemigroup</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>MyNat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>MyNat</span><span class="alectryon-token"> </span><span class="alectryon-token"><span class="k">where</span></span><span class="alectryon-token">
-  add_comm := </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_comm</var><b>: </b><span>∀ (a b : MyNat), a + b = b + a</span></span></div></blockquote></div></small></div>add_comm</span><span class="alectryon-token">
+<span class="c1">-- instance : AddCommSemigroup MyNat where</span>
+<span class="c1">--   add_comm := add_comm</span>
 
 <span class="c1">-- instance : AddMonoid MyNat where</span>
 <span class="c1">--   nsmul :=  λ x y =&gt; (myNatFromNat x) * y</span>
@@ -278,21 +277,21 @@ do <a href="../MultiplicationWorld.lean.html">Multiplication World</a> and <a hr
 
 
 
-        <script>
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
 
 
-        <script src="../elasticlunr.min.js" charset="utf-8"></script>
-        <script src="../mark.min.js" charset="utf-8"></script>
-        <script src="../searcher.js" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../clipboard.min.js" charset="utf-8"></script>
-        <script src="../highlight.js" charset="utf-8"></script>
-        <script src="../book.js" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../assets/alectryon.js"></script>
+        <script type="text/javascript" src="../assets/alectryon.js"></script>
 
 
     </body>

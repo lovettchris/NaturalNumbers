@@ -17,6 +17,7 @@ def createNinja(f):
     ninja.rule(name="alectryon", command="alectryon --frontend lean4+markup $in" +
         " --lake lakefile.lean --backend webpage -o $out")
     ninja.rule(name="book", command="mdbook build")
+    ninja.rule(name="lake", command="lake build $in")
 
     os.chdir(os.path.join(script_path))
     print("collecting .lean source files in Examples and Monads folders...")
@@ -24,11 +25,16 @@ def createNinja(f):
     for d in ["."] + os.listdir():
         if os.path.isdir(d) and not ignore(d):
             print(f"collecting lean files in {d}")
+            all_ileans = []
             for path in glob.glob(f"{d}/*.lean"):
                 n = path.replace('\\', '/')
                 if "lakefile.lean" not in n:
                     ninja.build(outputs=f"{n}.md", rule="alectryon", inputs=n)
+                    fn = os.path.splitext(n)[0]
+                    all_ileans += [f"build/lib/{fn}.olean", f"build/lib/{fn}.ilean"]
                     all_files += [f"{n}.md"]
+            if d != "." and len(all_ileans) > 0:
+                ninja.build(outputs=all_ileans, rule="lake", inputs=d)
 
     print("collecting all other md files...")
     for path in glob.glob("**/*.md", recursive=True):
