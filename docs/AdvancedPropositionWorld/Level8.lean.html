@@ -165,19 +165,27 @@ over <code>∨</code> and <code>∨</code> distributes over <code>∧</code>. Le
 <p>If <code>P</code>. <code>Q</code> and <code>R</code> are true/false statements, then
 <code>P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R).</code></p>
 <pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="c1">-- lemma and_or_distrib_left (P Q R : Prop) : P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R) := by</span>
-<span class="c1">--   split</span>
+<span class="c1">--   constructor</span>
 <span class="c1">--   intro h</span>
-<span class="c1">--   cases hqr with q r</span>
-<span class="c1">--   left, split, assumption, assumption</span>
-<span class="c1">--   right, split, assumption, assumption</span>
-<span class="c1">--   intro h</span>
-<span class="c1">--   cases h with hpq hpr</span>
-<span class="c1">--   cases hpq with p q</span>
-<span class="c1">--   split, assumption</span>
-<span class="c1">--   left, assumption</span>
-<span class="c1">--   cases hpr with hp hr</span>
-<span class="c1">--   split, assumption</span>
-<span class="c1">--   right, assumptio,</span></span></span></pre>
+<span class="c1">--   ???</span></span></span></pre>
+<p>Here's the lean 3 version:</p>
+<pre><code class="language-lean">lemma and_or_distrib_left (P Q R : Prop) : P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R) :=
+begin
+  split,
+  intro h,
+  cases h with hp hqr,
+  cases hqr with q r,
+  left, split, assumption, assumption,
+  right, split, assumption, assumption,
+  intro h,
+  cases h with hpq hpr,
+  cases hpq with p q,
+  split, assumption,
+  left, assumption,
+  cases hpr with hp hr,
+  split, assumption,
+  right, assumption,
+end</code></pre>
 <h2 id="pro-tip"><a class="header" href="#pro-tip">Pro tip</a></h2>
 <p>Did you spot the <code>import Mathlib.Tactic.Cases</code>? What do you think it does?</p>
 <p>You can make Mathlib available to your Lean package by adding the following
