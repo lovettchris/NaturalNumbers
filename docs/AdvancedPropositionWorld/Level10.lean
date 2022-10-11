@@ -25,21 +25,18 @@ p : P
 ⊢ Q
 ```
 
-The tools you have are not sufficient to continue. But you can just
-prove this, and any other basic lemmas of this form like `¬ ¬ P → P`,
-using the `by_cases` tactic. Here we start with the usual `intros` to
-turn the implication into hypotheses `h : ¬ Q → ¬ P` and `p : P`
-which leaves with the goal of `⊢ Q`.  But how can you prove Q using
-these hypotheses?  You can use this tactic:
+The tools you have are not sufficient to continue. But you can just prove this, and any other basic
+lemmas of this form like `¬ ¬ P → P`, using the `by_cases` tactic. Here we start with the usual
+`intros` to turn the implication into hypotheses `h : ¬ Q → ¬ P` and `p : P` which leaves with the
+goal of `⊢ Q`.  But how can you prove `Q` using these hypotheses?  You can use this tactic:
 
 `by_cases q : Q`
 
-This creates two sub-goals `pos` and `neg` with the first one assuming
-Q is true - which can easily satisfy the goal! and the second one assuming Q is false.
-But how can `h: ¬Q → ¬P`, `p: P`, `q: ¬Q` prove the goal `⊢ Q` ?
-Well it can't but if you apply `q` to the hypothesis `h` you end up with the
-conclusion `¬ P`, but then we would have a contradiction in our hypotheses
-saying `P` and `¬ P` which the `contradiction` tactic can take care of.
+This creates two sub-goals `pos` and `neg` with the first one assuming Q is true - which can easily
+satisfy the goal! and the second one assuming Q is false. But how can `h: ¬Q → ¬P`, `p: P`, `q: ¬Q`
+prove the goal `⊢ Q` ? Well if you apply `q` to the hypothesis `h` you end up with the conclusion `¬
+P`, but then you have a contradiction in your hypotheses saying `P` and `¬ P` which the
+`contradiction` tactic can take care of that.
 
 The `contradiction` tactic closes the main goal if its hypotheses
 are "trivially contradictory".
