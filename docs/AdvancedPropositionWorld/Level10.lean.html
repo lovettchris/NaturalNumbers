@@ -177,7 +177,7 @@ goal of <code>⊢ Q</code>.  But how can you prove <code>Q</code> using these hy
 <p>This creates two sub-goals <code>pos</code> and <code>neg</code> with the first one assuming Q is true - which can easily
 satisfy the goal! and the second one assuming Q is false. But how can <code>h: ¬Q → ¬P</code>, <code>p: P</code>, <code>q: ¬Q</code>
 prove the goal <code>⊢ Q</code> ? Well if you apply <code>q</code> to the hypothesis <code>h</code> you end up with the conclusion <code>¬ P</code>, but then you have a contradiction in your hypotheses saying <code>P</code> and <code>¬ P</code> which the
-<code>contradiction</code> tactic can take care of that.</p>
+<code>contradiction</code> tactic can take care of.</p>
 <p>The <code>contradiction</code> tactic closes the main goal if its hypotheses
 are &quot;trivially contradictory&quot;.</p>
 <h2 id="lemma"><a class="header" href="#lemma">Lemma</a></h2>
