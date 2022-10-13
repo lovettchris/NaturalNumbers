@@ -1,6 +1,6 @@
 import MyNat.Definition
 import MyNat.Addition
-import MyNat.Symm -- symmetry
+import MyNat.Symm -- symm
 namespace MyNat
 open MyNat
 
