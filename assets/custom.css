@@ -1,8 +1,0 @@
-.qed::before {
-    content: "∎";
-    float: right;
-}
-
-table {
-    margin: 0 !important;
-}
