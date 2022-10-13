@@ -2,7 +2,6 @@ import MyNat.Addition
 import AdditionWorld.Level2 -- add_assoc
 import AdditionWorld.Level4 -- add_comm
 import AdditionWorld.Level5 -- succ_eq_add_one
-import Mathlib.Tactic.Ring
 namespace MyNat
 open MyNat
 
@@ -37,8 +36,10 @@ swap additions of the form `a + b`.
 
 There are thirteen more levels about addition after this one, but before
 you can attempt them you need to learn some more tactics. So after this
-level you have a choice -- either move on to Multiplication World (which you can
-solve with the tactics you know) or try Function World (and learn some new ones).
+level you have a choice -- either move on to
+[Multiplication World](../MultiplicationWorld.lean.md) (which you can
+solve with the tactics you know) or try
+[Function World](../FunctionWorld.lean.md) (and learn some new ones).
 Other things, perhaps of interest
 to some players, are mentioned below the lemma.
 
@@ -56,11 +57,11 @@ If you have got this far, then you have become very good at manipulating equalit
 also now connect four handy type class `instances` to your `MyNat` type as follows:
 
 -/
-instance : AddSemigroup MyNat where
-  add_assoc := add_assoc
+-- instance : AddSemigroup MyNat where
+--   add_assoc := add_assoc
 
-instance : AddCommSemigroup MyNat where
-  add_comm := add_comm
+-- instance : AddCommSemigroup MyNat where
+--   add_comm := add_comm
 
 -- instance : AddMonoid MyNat where
 --   nsmul :=  λ x y => (myNatFromNat x) * y
@@ -82,7 +83,7 @@ instance : AddCommSemigroup MyNat where
 
 In Multiplication World you will be able to collect such
 advanced collectibles as `MyNat.comm_semiring` and
-`MyNat.distrib`, and then move on to power world and
+`MyNat.distrib`, and then move on to [Power World](../PowerWorld.lean.md) and
 the famous collectible at the end of it.
 
 One last thing -- didn't you think that solving this level
@@ -109,11 +110,12 @@ Imagine having to do that one by hand! The AI closes the goal because it knows h
 associativity and commutativity sensibly in a commutative monoid.
 
 You are now done with addition world. You can now decide whether to press on with
-[Multiplication World](../MultiplicationWorld.lean.md) and power world
+[Multiplication World](../MultiplicationWorld.lean.md) and [Power World](../PowerWorld.lean.md)
 (which can be solved with `rw`, `rfl` and `induction`), or to go on to
-Function World where you can learn the tactics needed to prove goals of the form `P → Q`, thus
+[Function World](../FunctionWorld.lean.md) where you can learn the tactics needed to prove goals of the form `P → Q`, thus
 enabling you to solve more advanced addition world levels such as `a + t = b + t → a = b`. Note that
-Function World is more challenging mathematically; but if you can do Addition World you can surely
-do Multiplication World and Power World.
+[Function World](../FunctionWorld.lean.md) is more challenging mathematically;
+but if you can do Addition World you can surely
+do [Multiplication World](../MultiplicationWorld.lean.md) and [Power World](../PowerWorld.lean.md).
 
 -/
