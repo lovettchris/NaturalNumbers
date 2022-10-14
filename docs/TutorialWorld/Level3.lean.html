@@ -165,10 +165,10 @@ which we'll take a look at now:</p>
 <p>These axioms are essentially the axioms isolated by Peano which uniquely characterize the natural
 numbers (you also need recursion, but you can ignore it for now). The first axiom says that 0 is a
 natural number. The second says that there is a <code>succ</code> function which eats a number and spits out the
-number after it, so <code>succ(0) = 1</code>, <code>succ(1) = 2</code>, and so on.</p>
+number after it, so <code>succ 0 = 1</code>, <code>succ 1 = 2</code>, and so on.</p>
 <p>Peano's last axiom is the principle of mathematical induction. This is a deeper fact. It says that
 if you have infinitely many true/false statements <code>P(0)</code>, <code>P(1)</code>, <code>P(2)</code>, and so on, and if
-<code>P(0)</code> is true, and if for every natural number <code>d</code> you know that <code>P(d)</code> implies <code>P(succ(d))</code>, then
+<code>P(0)</code> is true, and if for every natural number <code>d</code> you know that <code>P(d)</code> implies <code>P(succ d)</code>, then
 <code>P(n)</code> must be true for every natural number <code>n</code>.
 It's like saying that if you have a long line of dominoes, and if you knock the first one down, and
 if you know that if a domino falls down then the one after it will fall down too, then you can
@@ -179,8 +179,8 @@ secondly that these axioms alone can be used to build a whole bunch of other str
 natural numbers, for example addition, multiplication and so on.</p>
 <p>This world is all about seeing how far these axioms of Peano can take us.</p>
 <p>Let's practice your use of the <code>rewrite</code> tactic in the following example. The hypothesis <code>h</code> is a proof that
-<code>succ(a) = b</code> and you want to prove that <code>succ(succ(a))=succ(b)</code>. In words, you're going to prove that if
-<code>b</code> is the number after <code>a</code> then <code>succ(b)</code> is the number after <code>succ(a)</code>. Now here's a tricky question. If
+<code>succ a = b</code> and you want to prove that <code>succ (succ a) = succ b</code>. In words, you're going to prove that if
+<code>b</code> is the number after <code>a</code> then <code>succ b</code> is the number after <code>succ a</code>. Now here's a tricky question. If
 your goal is <code>⊢ succ (succ a) = succ b</code>, and your hypothesis is <code>h : succ a = b</code>, then what will the goal
 change to when we type <code>rewrite [h]</code>?</p>
 <h2 id="lemma"><a class="header" href="#lemma">Lemma</a></h2>

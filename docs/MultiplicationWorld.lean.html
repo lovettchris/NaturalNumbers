@@ -165,7 +165,7 @@
 recursion, just like addition. Here are the two new axioms:</p>
 <ul>
 <li><code>mul_zero (a : MyNat) : a * 0 = 0</code></li>
-<li><code>mul_succ (a b : MyNat) : a * succ(b) = a * b + a</code></li>
+<li><code>mul_succ (a b : MyNat) : a * succ b = a * b + a</code></li>
 </ul>
 <p>In words, we define multiplication by &quot;induction on the second variable&quot;, with <code>a * 0</code> defined to be
 <code>0</code> and, if we know <code>a * b</code>, then <code>a</code> times the number after <code>b</code> is defined to be <code>a * b + a</code>.</p>

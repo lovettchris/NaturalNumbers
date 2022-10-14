@@ -169,7 +169,7 @@ with <code>add_zero</code>. If you ever see <code>x + 0</code> in your goal, <co
 because <code>add_zero</code> is a proof that <code>x + 0 = x</code> (more precisely, <code>add_zero x</code> is a proof that <code>x + 0 = x</code> but
 Lean can figure out the <code>x</code> from the context).</p>
 <p>Now here's the inductive step. If you know how to add <code>d</code> to <code>a</code>, then Peano tells you how to add
-<code>succ(d)</code> to <code>a</code>. It looks like this:</p>
+<code>succ d</code> to <code>a</code>. It looks like this:</p>
 <ul>
 <li><code>add_succ (a d : MyNat) : a + (succ d) = succ (a + d)</code></li>
 </ul>
