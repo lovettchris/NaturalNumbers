@@ -1,0 +1,1 @@
+{"version":1,"references":{"c:MyNat.eq_zero_of_add_right_eq_self":{"usages":[],"definition":[21,6,21,34]},"c:MyNat.add_zero":{"usages":[[25,6,25,14]],"definition":null},"c:MyNat.add_left_cancel":{"usages":[[23,8,23,23]],"definition":null},"c:MyNat.MyNat":{"usages":[[21,42,21,47]],"definition":null}},"module":"AdvancedAdditionWorld.Level8"}

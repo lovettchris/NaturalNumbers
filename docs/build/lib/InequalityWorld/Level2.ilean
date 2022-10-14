@@ -1,0 +1,1 @@
+{"version":1,"references":{"c:MyNat.le_refl":{"usages":[[29,17,29,30]],"definition":[20,6,20,13]},"c:MyNat._example":{"usages":[],"definition":[34,0,34,7]},"c:MyNat.MyNat":{"usages":[[20,19,20,24],[34,15,34,20]],"definition":null}},"module":"InequalityWorld.Level2"}

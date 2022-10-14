@@ -1,0 +1,1 @@
+{"version":1,"references":{"c:MyNat.add_right_cancel":{"usages":[[26,8,26,24]],"definition":null},"c:MyNat.add_left_cancel":{"usages":[],"definition":[23,8,23,23]},"c:MyNat.add_comm":{"usages":[[24,6,24,14],[25,6,25,14]],"definition":null},"c:MyNat.MyNat":{"usages":[[23,33,23,38]],"definition":null}},"module":"AdvancedAdditionWorld.Level6"}
