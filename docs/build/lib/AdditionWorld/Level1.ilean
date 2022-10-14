@@ -1,1 +1,0 @@
-{"version":1,"references":{"c:MyNat.zero_add":{"usages":[],"definition":[30,6,30,14]},"c:MyNat.add_succ":{"usages":[[34,10,34,18]],"definition":null},"c:MyNat.MyNat.zero":{"usages":[[32,4,32,8]],"definition":null},"c:MyNat.MyNat.succ":{"usages":[[33,4,33,8]],"definition":null},"c:MyNat.MyNat":{"usages":[[30,20,30,25]],"definition":null}},"module":"AdditionWorld.Level1"}

@@ -1,1 +1,0 @@
-{"version":1,"references":{"c:MyNat.zero_le":{"usages":[],"definition":[17,6,17,13]},"c:MyNat.zero_add":{"usages":[[19,6,19,14]],"definition":null},"c:MyNat.MyNat":{"usages":[[17,19,17,24]],"definition":null}},"module":"InequalityWorld.Level4"}

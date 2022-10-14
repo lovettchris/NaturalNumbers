@@ -1,1 +1,0 @@
-{"version":1,"references":{"c:MyNat.le_succ_self":{"usages":[],"definition":[16,6,16,18]},"c:MyNat.MyNat.succ":{"usages":[[16,37,16,41]],"definition":null},"c:MyNat.MyNat":{"usages":[[16,24,16,29]],"definition":null}},"module":"InequalityWorld.Level10"}

@@ -1,1 +1,0 @@
-{"version":1,"references":{"c:MyNat.le_trans":{"usages":[],"definition":[17,8,17,16]},"c:MyNat.add_assoc":{"usages":[[23,11,23,20]],"definition":null},"c:MyNat.MyNat":{"usages":[[17,26,17,31]],"definition":null},"c:Exists.intro":{"usages":[[19,4,19,5],[21,6,21,7]],"definition":null}},"module":"InequalityWorld.Level5"}

@@ -1,1 +1,0 @@
-{"version":1,"references":{"c:MyNat.mul_zero":{"usages":[],"definition":[4,6,4,14]},"c:MyNat.mul_succ":{"usages":[],"definition":[6,6,6,14]},"c:MyNat.MyNat.succ":{"usages":[[6,36,6,40]],"definition":null},"c:MyNat.MyNat":{"usages":[[4,20,4,25],[6,22,6,27]],"definition":null}},"module":"MyNat.Multiplication"}
